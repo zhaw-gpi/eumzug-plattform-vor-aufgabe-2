@@ -176,7 +176,7 @@ Der Header wiederum muss ebenfalls gesetzt werden mit Variablen:
 senderId (sedex://umzugsplattform), manufacturer (Kanton Bern), product (Umzugsplattform), productVersion (1.0), messageDate (aktuelles Datum/Uhrzeit), testDeliveryFlag (true), action (1), messageType (sedex://personMoveRequest), messageId (businessCaseId + "." + messageType).
 Header und personMoveRequest werden dann in der eigentlichen Request-Klasse DeliveryType zugewiesen.
 
-Die Response ist ebenfalls vom Typ DeliveryType und enthält den Header sowie entweder eine personMoveResponse oder bei einem Fehler (action ist nicht 9) NegativeReportType. Falls ein NegativeReportType zurückkommt, dann wird lediglich der darin enthaltene textGerman als Fehlermeldung in einer UnsupportedOperationException ausgegeben. Ansonsten werden die zwei in personMoveResponse enthaltenen Eigenschaften personKnown und sofern vorhanden moveAllowed den gleich benannten Prozessvariablen übergeben.</bpmn:documentation>
+Die Response ist ebenfalls vom Typ DeliveryType und enthält den Header sowie entweder eine personMoveResponse oder bei einem Fehler (action ist nicht 9) NegativeReportType inkl. Angabe von textGerman mit der Fehlermeldung. Die zwei in personMoveResponse enthaltenen Eigenschaften personKnown und sofern vorhanden moveAllowed werden den gleich benannten Prozessvariablen übergeben.</bpmn:documentation>
       <bpmn:incoming>SequenceFlow_0bbx1ag</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1nn0lr5</bpmn:outgoing>
     </bpmn:task>

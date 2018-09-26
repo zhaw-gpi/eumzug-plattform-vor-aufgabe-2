@@ -217,18 +217,16 @@ In einem Input-Parameter wird die Prozessvariable 'status' gesetzt mit "Erfolgre
 - Zuzugsinformationen
 - Wohnverhältnis-Informationen
 
-Zuunterst eine Checkbox:
+Zuunterst zwei Checkboxes:
 
-- Checkbox "Alle Angaben sind korrekt" (allDataCorrect), default-mässig angehakt. Ist sie nicht angehakt, soll ein Info-Alert angezeigt werden: "Sie werden zurück zum ersten Formular geführt, womit Sie in jedem Formular Ihre Angaben nochmals korrigieren können. Bestehende Eingaben bleiben erhalten."</bpmn:documentation>
+- Checkbox "Alle Angaben sind korrekt" (allDataCorrect), default-mässig angehakt. Ist sie nicht angehakt, soll ein Info-Alert angezeigt werden: "Sie werden zurück zum ersten Formular geführt, womit Sie in jedem Formular Ihre Angaben nochmals korrigieren können. Bestehende Eingaben bleiben erhalten."
+
+- Checkbox "Ich akzeptiere, die Gebühr von Fr. {{total}}.- zu bezahlen" (feesAccepted) -&gt; default-mässig angehakt. Ist sie nicht angehakt, soll ein Danger-Alert angezeigt werden: "Sind Sie sicher? Hierdurch werden alle Ihre Angaben aus Gründen der Nachvollziehbarkeit in der Umzugsplattform-Datenbank gespeichert, aber nicht an die Weg- und Zuzugsgemeinden weiter geleitet. Das heisst, Sie müssen in jedem Fall den Umzug persönlich am Schalter der Weg- und Zuzugsgemeinde melden."
+</bpmn:documentation>
       <bpmn:incoming>SequenceFlow_12mko98</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_15e28af</bpmn:outgoing>
     </bpmn:task>
   </bpmn:process>
-  <bpmn:error id="Error_0fmfamk" name="ErrorUmzugsmeldungErfassenUndBezahlen" errorCode="ZeitueberschreitungBenutzer" />
-  <bpmn:error id="Error_1ak9z8o" name="ErrorZahlungFehlgeschlagen" />
-  <bpmn:error id="Error_1ayoalr" name="ErrorUmzugsmeldungErfassenUndBezahlen" errorCode="ZahlungFehlgeschlagen" />
-  <bpmn:error id="Error_0ye3wrs" name="ErrorGebuehrenNichtAkzeptiert" errorCode="ErrorGebuehrenNichtAkzeptiert" />
-  <bpmn:error id="Error_0lboqji" name="ErrorUmzugsmeldungErfassenUndBezahlen" errorCode="ErrorGebuehrenNichtAkzeptiert" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0v36rjh">
       <bpmndi:BPMNShape id="Participant_1206ssw_di" bpmnElement="UmzugsmeldungErfassenUndBezahlenParticipant">

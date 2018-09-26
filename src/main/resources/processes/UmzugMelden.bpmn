@@ -53,6 +53,11 @@ Theoretisch: Dem Prozess wird der BusinessKey, die BusinessCaseId und der meldeP
       <outgoing>SequenceFlow_1iopode</outgoing>
     </callActivity>
     <task id="MitEKSystemenKommunizieren" name="Mit EK-Systemen kommunizieren">
+      <documentation>Dem oder den Einwohnerkontrollsystemen werden  die vom Meldepflichtigen erfassten Angaben asynchron über eine definierte technische Schnittstelle mitgeteilt.
+
+Nach einigen Minuten bis Tagen trifft eine bestätigende oder ablehnende Nachricht von dem oder den Einwohnerkontrollsystemen ein, ebenfalls über eine definierte technische Schnittstelle.
+
+Wie genau eine Gemeinde mit der erhaltenen Meldung umgeht, ist je nach Gemeinde und verwendeter Software unterschiedlich. Sicher jedoch ist, dass eine Meldung nicht 100%-ig automatisiert verarbeitet werden darf, sondern dass ein Sachbearbeiter die Verarbeitung anstösst.</documentation>
       <incoming>SequenceFlow_1iopode</incoming>
       <outgoing>SequenceFlow_1ptg35o</outgoing>
     </task>
@@ -60,12 +65,12 @@ Theoretisch: Dem Prozess wird der BusinessKey, die BusinessCaseId und der meldeP
       <incoming>SequenceFlow_1hdylfx</incoming>
     </endEvent>
     <task id="ErfolgreichenAbschlussMitteilen" name="Erfolgreichen Abschluss mitteilen">
-      <documentation />
+      <documentation>Dem Meldepflichtigen wird der aktuelle Status z.B. per E-Mail mitgeteilt.</documentation>
       <incoming>SequenceFlow_1ptg35o</incoming>
       <outgoing>SequenceFlow_1x0qckx</outgoing>
     </task>
     <task id="ErfolgreichenAbschlussPersistieren" name="Erfolgreichen Abschluss persistieren">
-      <documentation>Aufruf der JavaDelegate-implementierenden Klasse 'PersistUserEntriesAndStatusDelegate', um Personenidentifikations- und Status-Angaben zu persistieren.
+      <documentation>Aufruf der JavaDelegate-implementierenden Klasse 'PersistUserEntriesAndStatusDelegate', um Personenidentifikations- und Status-Angaben in der Umzugsplattform-Datenbank zu persistieren.
 
 Die Personenidentifikations-Angaben sind bereits als Prozessvariablen vorhanden (localPersonId, vn, firstName, officialName, dateOfBirth und sex). In einem Input-Parameter wird die Prozessvariable 'status' gesetzt mit "Erfolgreicher Abschluss des eUmzugsmeldung".</documentation>
       <incoming>SequenceFlow_1x0qckx</incoming>
@@ -99,8 +104,6 @@ Die Personenidentifikations-Angaben sind bereits als Prozessvariablen vorhanden 
       <script>var dummyWeilBlankoTaskNichtErlaubt;</script>
     </scriptTask>
   </process>
-  <error id="Error_12sd8hn" name="ErrorUmzugsmeldungErfassenUndBezahlen" />
-  <error id="Error_04jbe5p" name="ErrorEksAblehnung" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_TwitterDemoProcess">
     <bpmndi:BPMNPlane id="BPMNPlane_TwitterDemoProcess" bpmnElement="Collaboration_05jmpr5">
       <bpmndi:BPMNShape id="Participant_1mdci1z_di" bpmnElement="UmzugMeldenParticipant">
