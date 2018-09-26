@@ -219,8 +219,7 @@ In einem Input-Parameter wird die Prozessvariable 'status' gesetzt mit "Erfolgre
 
 Zuunterst eine Checkbox:
 
-- Checkbox "Alle Angaben sind korrekt" (allDataCorrect), default-mässig angehakt. Ist sie nicht angehakt, soll ein Info-Alert angezeigt werden: "Sie werden zurück zum ersten Formular geführt, womit Sie in jedem Formular Ihre Angaben nochmals korrigieren können. Bestehende Eingaben bleiben erhalten."
-</bpmn:documentation>
+- Checkbox "Alle Angaben sind korrekt" (allDataCorrect), default-mässig angehakt. Ist sie nicht angehakt, soll ein Info-Alert angezeigt werden: "Sie werden zurück zum ersten Formular geführt, womit Sie in jedem Formular Ihre Angaben nochmals korrigieren können. Bestehende Eingaben bleiben erhalten."</bpmn:documentation>
       <bpmn:incoming>SequenceFlow_12mko98</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_15e28af</bpmn:outgoing>
     </bpmn:task>
@@ -335,7 +334,7 @@ Zuunterst eine Checkbox:
       <bpmndi:BPMNShape id="ExclusiveGateway_0b249hv_di" bpmnElement="ExclusiveGateway_0b249hv" isMarkerVisible="true">
         <dc:Bounds x="782" y="185" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="743" y="169" width="53" height="27" />
+          <dc:Bounds x="780" y="246" width="53" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0u6040x_di" bpmnElement="Weiter">

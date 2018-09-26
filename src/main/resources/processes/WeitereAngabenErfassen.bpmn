@@ -76,7 +76,7 @@ Ort
       <bpmn:documentation>Die Grundversicherung ist nur zu prüfen, wenn es sich um einen Zuzug-Wegzug handelt</bpmn:documentation>
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${municipalityIdMoveOut != municipalityIdMoveIn}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:exclusiveGateway id="ExclusiveGateway_0hkwozz" name="Prüfen?" default="PruefenJa">
+    <bpmn:exclusiveGateway id="ExclusiveGateway_0hkwozz" name="Prüfen?">
       <bpmn:incoming>SequenceFlow_13c4q3d</bpmn:incoming>
       <bpmn:outgoing>PruefenJa</bpmn:outgoing>
       <bpmn:outgoing>PruefenNein</bpmn:outgoing>
@@ -100,6 +100,7 @@ Ort
     <bpmn:sequenceFlow id="SequenceFlow_13c4q3d" sourceRef="VersicherungsKartennummernErfassen" targetRef="ExclusiveGateway_0hkwozz" />
     <bpmn:sequenceFlow id="PruefenJa" name="ja" sourceRef="ExclusiveGateway_0hkwozz" targetRef="GrundversicherungPruefen">
       <bpmn:documentation>Im Normalfall soll die Prüfung durchgeführt werden.</bpmn:documentation>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${checkBaseInsurance}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_1pfbest" sourceRef="GrundversicherungPruefen" targetRef="ExclusiveGateway_0vwu5q9" />
     <bpmn:sequenceFlow id="PruefenNein" name="nein" sourceRef="ExclusiveGateway_0hkwozz" targetRef="ExclusiveGateway_1k9fmii">
